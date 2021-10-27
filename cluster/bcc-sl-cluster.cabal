@@ -1,0 +1,144 @@
+name:                bcc-sl-cluster
+version:             3.2.0
+synopsis:            Utilities to generate and run cluster of nodes
+description:         See README
+homepage:            https://github.com/The-Blockchain-Company/bcc-sl/cluster/README.md
+author:              TBCO Engineering Team
+maintainer:          operations@bcccoin.io
+copyright:           2021 TBCO
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  default-language:   Haskell2010
+  default-extensions: DeriveGeneric
+                      LambdaCase
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+                      ScopedTypeVariables
+
+  hs-source-dirs:     src
+
+  build-depends: base >=4.7 && <5
+
+               , bcc-sl
+               , bcc-sl-chain
+               , bcc-sl-core
+               , bcc-sl-infra
+               , bcc-sl-networking
+               , bcc-sl-node
+               , bcc-sl-util
+               , bcc-sl-x509
+
+               , aeson
+               , async
+               , attoparsec
+               , bytestring
+               , containers
+               , directory
+               , filepath
+               , formatting
+               , iproute
+               , lens
+               , optparse-applicative
+               , megaparsec
+               , safe
+               , servant-client
+               , temporary
+               , text
+               , time
+               , tls
+               , universum
+
+  exposed-modules: Bcc.Cluster
+                   Bcc.Cluster.Environment
+                   Bcc.Cluster.Util
+
+
+test-suite bcc-sl-cluster-test
+  default-language:   Haskell2010
+  default-extensions: DeriveGeneric
+                      LambdaCase
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+                      ScopedTypeVariables
+
+  type:               exitcode-stdio-1.0
+
+  hs-source-dirs:     test
+  main-is:            Main.hs
+  other-modules:      Bcc.Cluster.Util.Arbitrary
+                      Bcc.Cluster.Util.Spec
+                      Bcc.Cluster.Environment.Arbitrary
+                      Bcc.Cluster.Environment.Spec
+
+  build-depends:      base
+                    , bcc-sl-cluster
+                    , bcc-sl-core
+                    , bcc-sl-infra
+                    , async
+                    , containers
+                    , lens
+                    , QuickCheck
+                    , time
+                    , universum
+
+
+executable bcc-sl-cluster-demo
+  ghc-options:        -threaded -O2 -rtsopts
+  default-language:   Haskell2010
+  default-extensions: DeriveGeneric
+                      LambdaCase
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+                      ScopedTypeVariables
+
+  hs-source-dirs:     app/demo
+  main-is:            Main.hs
+
+  build-depends:      base
+                    , bcc-sl
+                    , bcc-sl-cluster
+                    , bcc-sl-node
+                    , ansi-terminal
+                    , async
+                    , containers
+                    , docopt
+                    , formatting
+                    , lens
+                    , universum
+
+
+executable bcc-sl-cluster-prepare-environment
+  ghc-options:        -threaded -O2 -rtsopts
+  default-language:   Haskell2010
+  default-extensions: DeriveGeneric
+                      LambdaCase
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+                      ScopedTypeVariables
+
+  hs-source-dirs:     app/prepare-environment
+  main-is:            Main.hs
+
+  build-depends:      base
+                    , bcc-sl-cluster
+                    , containers
+                    , docopt
+                    , formatting
+                    , lens
+                    , universum

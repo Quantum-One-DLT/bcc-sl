@@ -1,0 +1,200 @@
+name:                bcc-sl-node
+version:             3.2.0
+synopsis:            Bcc SL simple node executable
+description:         Provides a 'bcc-node-simple' executable which can
+                     connect to the Bcc network and act as a full node
+                     but does not have any wallet capabilities.
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              Serokell
+maintainer:          Serokell <hi@serokell.io>
+copyright:           2021 The-Blockchain-Company
+category:            Currency
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  build-depends:       base
+                     , aeson
+                     , async
+                     , bytestring
+                     , bcc-sl
+                     , bcc-sl-chain
+                     , bcc-sl-core
+                     , bcc-sl-crypto
+                     , bcc-sl-db
+                     , bcc-sl-infra
+                     , bcc-sl-networking
+                     , bcc-sl-node-ipc
+                     , bcc-sl-util
+                     , bcc-sl-x509
+                     , connection
+                     , data-default
+                     , http-client
+                     , http-client-tls
+                     , http-media
+                     , http-types
+                     , lens
+                     , serokell-util
+                     , servant-client
+                     , servant-server
+                     , servant-swagger
+                     , servant-swagger-ui
+                     , stm
+                     , swagger2
+                     , text
+                     , time-units
+                     , tls
+                     , universum
+                     , wai
+                     , warp
+                     , x509
+                     , x509-store
+
+  exposed-modules:     Bcc.Node.API
+                       Bcc.Node.API.Swagger
+                       Bcc.Node.Client
+                       Bcc.Node.Manager
+                       Bcc.Node.NodeStateAdaptor
+
+  other-modules:       Paths_bcc_sl_node
+
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+  default-extensions: TypeOperators
+                      DataKinds
+                      DefaultSignatures
+                      NoImplicitPrelude
+                      MultiParamTypeClasses
+                      OverloadedStrings
+                      ScopedTypeVariables
+                      FlexibleInstances
+                      FlexibleContexts
+                      TypeFamilies
+                      TypeApplications
+                      TypeOperators
+                      TemplateHaskell
+                      RecordWildCards
+                      ScopedTypeVariables
+                      UndecidableInstances
+                      MonadFailDesugaring
+                      TupleSections
+
+executable bcc-node-simple
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base
+                     , bcc-sl-chain
+                     , bcc-sl-core
+                     , bcc-sl-util
+                     , bcc-sl-node
+                     , bcc-sl
+                     , universum >= 0.1.11
+  default-language:    Haskell2010
+  ghc-options:         -threaded -rtsopts
+                       -Wall
+                       -O2
+
+  -- linker speed up for linux
+  if os(linux)
+    ghc-options:       -optl-fuse-ld=gold
+    ld-options:        -fuse-ld=gold
+
+  default-extensions:   DeriveDataTypeable
+                        DeriveGeneric
+                        GeneralizedNewtypeDeriving
+                        StandaloneDeriving
+                        FlexibleContexts
+                        FlexibleInstances
+                        MultiParamTypeClasses
+                        FunctionalDependencies
+                        DefaultSignatures
+                        NoImplicitPrelude
+                        OverloadedStrings
+                        TypeApplications
+                        TupleSections
+                        ViewPatterns
+                        LambdaCase
+                        MultiWayIf
+                        ConstraintKinds
+                        UndecidableInstances
+                        BangPatterns
+                        TemplateHaskell
+                        ScopedTypeVariables
+                        GADTs
+                        MonadFailDesugaring
+
+  build-tools: cpphs >= 1.19
+  ghc-options: -pgmP cpphs -optP --cpp
+
+test-suite property-tests
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  other-modules:       ChainExtension
+                       Translation
+
+                       Chain.Abstract
+                       Chain.Abstract.FinitelySupportedFunction
+                       Chain.Abstract.Repartition
+                       Chain.Abstract.Translate.FromUTxO
+                       -- Chain.Abstract.Translate.ToBcc
+                       Chain.Abstract.Translate.Policies
+                       Chain.Policy
+                       Infrastructure.Generator
+
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+  build-depends:       base
+                     , HUnit
+                     , QuickCheck
+                     , bcc-sl-core
+                     , bcc-sl-utxo
+                     , containers
+                     , data-default >= 0.7
+                     , hashable
+                     , hspec
+                     , lens
+                     , mtl
+                     , text
+                     , universum >= 0.1.11
+                     , validation
+  ghc-options:
+                       -threaded
+                       -rtsopts
+                       -Wall
+
+
+  -- linker speed up for linux
+  if os(linux)
+    ghc-options:       -optl-fuse-ld=gold
+    ld-options:        -fuse-ld=gold
+
+  default-extensions:   DeriveDataTypeable
+                        DeriveGeneric
+                        GeneralizedNewtypeDeriving
+                        StandaloneDeriving
+                        FlexibleContexts
+                        FlexibleInstances
+                        MultiParamTypeClasses
+                        FunctionalDependencies
+                        DefaultSignatures
+                        NoImplicitPrelude
+                        OverloadedStrings
+                        RecordWildCards
+                        TypeApplications
+                        TupleSections
+                        ViewPatterns
+                        LambdaCase
+                        MultiWayIf
+                        ConstraintKinds
+                        UndecidableInstances
+                        BangPatterns
+                        TemplateHaskell
+                        ScopedTypeVariables
+                        GADTs
+                        MonadFailDesugaring

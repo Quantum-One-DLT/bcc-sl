@@ -1,0 +1,18 @@
+# This config is used by Bezalel (in production).
+
+rotation:
+    logLimit: 5242880 # 5MB
+    keepFiles: 10
+loggerTree:
+  severity: Info+
+  bcc-sl.syncWalletWorker: Error+
+  files:
+    - node
+
+  handlers:
+    - { name: "JSON"
+      , filepath: "pub/node.json"
+      , logsafety: PublicLogLevel
+      , severity: Info
+      , backend: FileJsonBE }
+

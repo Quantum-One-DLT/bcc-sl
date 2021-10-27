@@ -1,0 +1,93 @@
+name:                bcc-sl-mnemonic
+version:             3.2.0
+synopsis:            TODO
+description:         See README
+homepage:            https://github.com/The-Blockchain-Company/bcc-sl/mnemonic/README.md
+author:              TBCO Engineering Team
+maintainer:          operations@bcccoin.io
+copyright:           2021 TBCO
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  default-language:   Haskell2010
+  default-extensions: DeriveGeneric
+                      LambdaCase
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+                      ScopedTypeVariables
+
+  hs-source-dirs:     src
+
+  build-depends: base >=4.7 && <5
+               , QuickCheck
+               , aeson
+               , basement
+               , bytestring
+               , bcc-crypto
+               , bcc-sl
+               , bcc-sl-core
+               , bcc-sl-crypto
+               , bcc-sl-infra
+               , cryptonite
+               , data-default
+               , formatting
+               , lens
+               , memory
+               , swagger2
+               , text
+               , time
+               , universum
+
+  exposed-modules: Bcc.Mnemonic
+
+
+test-suite bcc-sl-mnemonic-test
+  default-language:   Haskell2010
+
+  type:               exitcode-stdio-1.0
+  default-extensions: DeriveGeneric
+                      LambdaCase
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+                      ScopedTypeVariables
+
+  hs-source-dirs:     test
+  main-is:            Main.hs
+  other-modules:      Bcc.MnemonicSpec
+
+  build-depends:      base
+                    , hspec
+                    , universum
+                    , bcc-sl-mnemonic
+                    , bytestring
+                    , QuickCheck
+                    , bcc-sl-crypto
+                    , data-default
+                    , aeson
+                    , bcc-crypto
+
+
+executable bcc-generate-mnemonic
+  main-is:            Main.hs
+  hs-source-dirs:     generate-mnemonic
+  ghc-options:        -threaded -rtsopts -with-rtsopts=-N -Wall
+  build-depends:
+                      base
+                    , aeson
+                    , bcc-sl-mnemonic
+                    , bytestring
+                    , text
+                    , universum
+  default-language:   Haskell2010
+  default-extensions: NoImplicitPrelude

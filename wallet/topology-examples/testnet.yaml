@@ -1,0 +1,4 @@
+wallet:
+    relays: [[{"host": "relays.awstest.blockchain-company.io"}]]
+    valency: 1
+    fallbacks: 3

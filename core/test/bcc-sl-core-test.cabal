@@ -1,0 +1,84 @@
+name:                bcc-sl-core-test
+version:             3.2.0
+synopsis:            Bcc SL - core functionality (tests)
+description:         QuickCheck Arbitrary instances for the Bcc SL core
+                     functionality.
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              TBCO
+maintainer:          TBCO <support@bcccoin.io>
+copyright:           2021 TBCO
+category:            Currency
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+                       Test.Pos.Core.Bi
+                       Test.Pos.Core.Chrono
+                       Test.Pos.Core.Dummy
+                       Test.Pos.Core.ExampleHelpers
+                       Test.Pos.Core.Gen
+                       Test.Pos.Core.Arbitrary
+                       Test.Pos.Core.Arbitrary.Unsafe
+                       Test.Pos.Core.Arbitrary.Slotting
+                       Test.Pos.Core.Json
+                       Test.Pos.Core.SafeCopy
+
+  build-depends:       QuickCheck
+                     , base
+                     , bytestring
+                     , bcc-crypto
+                     , bcc-sl-binary
+                     , bcc-sl-binary-test
+                     , bcc-sl-core
+                     , bcc-sl-crypto
+                     , bcc-sl-crypto-test
+                     , bcc-sl-util
+                     , bcc-sl-util-test
+                     , containers
+                     , cryptonite
+                     , generic-arbitrary
+                     , hedgehog
+                     , quickcheck-instances
+                     , random
+                     , serokell-util
+                     , text
+                     , time-units
+                     , universum
+                     , unordered-containers
+
+  default-language:    Haskell2010
+
+  default-extensions:  DeriveDataTypeable
+                       DeriveGeneric
+                       DeriveFunctor
+                       DeriveFoldable
+                       DeriveTraversable
+                       GeneralizedNewtypeDeriving
+                       StandaloneDeriving
+                       FlexibleContexts
+                       FlexibleInstances
+                       MultiParamTypeClasses
+                       FunctionalDependencies
+                       DefaultSignatures
+                       NoImplicitPrelude
+                       OverloadedStrings
+                       TypeApplications
+                       TupleSections
+                       ViewPatterns
+                       LambdaCase
+                       MultiWayIf
+                       ConstraintKinds
+                       UndecidableInstances
+                       BangPatterns
+                       TemplateHaskell
+                       ScopedTypeVariables
+                       MonadFailDesugaring
+                       GADTs
+
+  ghc-options:
+                       -O2
+                       -Wall

@@ -1,0 +1,14 @@
+name: yaml-validation
+version: 0.1
+cabal-version:       >=1.10
+build-type:          Simple
+
+executable yamlValidation
+  default-language: Haskell2010
+  build-depends: base
+               , bcc-sl-util
+               , bcc-sl-infra
+               , split
+               , yaml
+               , exceptions
+  main-is: Main.hs

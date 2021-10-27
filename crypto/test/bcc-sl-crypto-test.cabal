@@ -1,0 +1,71 @@
+name:                bcc-sl-crypto-test
+version:             3.2.0
+synopsis:            Bcc SL - arbitrary instances for bcc-sl-crypto
+description:         This package contains arbitrary instances for the cryptography primitives used in Bcc SL.
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              Serokell
+maintainer:          hi@serokell.io
+copyright:           2021 The-Blockchain-Company
+category:            Currency
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+                       Test.Pos.Crypto.Arbitrary
+                       Test.Pos.Crypto.Bi
+                       Test.Pos.Crypto.Dummy
+                       Test.Pos.Crypto.Example
+                       Test.Pos.Crypto.Gen
+                       Test.Pos.Crypto.Json
+
+  other-modules:
+                       Test.Pos.Crypto.Arbitrary.Unsafe
+
+
+  build-depends:       QuickCheck
+                     , base
+                     , bytestring
+                     , bcc-crypto
+                     , bcc-sl-binary
+                     , bcc-sl-binary-test
+                     , bcc-sl-crypto
+                     , bcc-sl-util
+                     , bcc-sl-util-test
+                     , cryptonite
+                     , generic-arbitrary
+                     , hedgehog
+                     , memory
+                     , quickcheck-instances
+                     , universum
+
+  default-language:    Haskell2010
+
+  default-extensions:  DeriveDataTypeable
+                       DeriveGeneric
+                       GeneralizedNewtypeDeriving
+                       StandaloneDeriving
+                       FlexibleContexts
+                       FlexibleInstances
+                       MultiParamTypeClasses
+                       FunctionalDependencies
+                       DefaultSignatures
+                       NoImplicitPrelude
+                       OverloadedStrings
+                       TypeApplications
+                       TupleSections
+                       ViewPatterns
+                       LambdaCase
+                       MultiWayIf
+                       ConstraintKinds
+                       UndecidableInstances
+                       BangPatterns
+                       TemplateHaskell
+                       ScopedTypeVariables
+                       MonadFailDesugaring
+
+  ghc-options:         -Wall
+                       -O2

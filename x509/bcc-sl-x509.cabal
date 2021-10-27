@@ -1,0 +1,70 @@
+name:                bcc-sl-x509
+version:             3.2.0
+synopsis:            Tool-suite for generating x509 certificates specialized for RSA with SHA-256
+description:         See README
+homepage:            https://github.com/The-Blockchain-Company/bcc-sl/x509/README.md
+author:              TBCO Engineering Team
+maintainer:          operations@bcccoin.io
+copyright:           2021 TBCO
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  default-language:   Haskell2010
+  default-extensions: DeriveGeneric
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+
+  hs-source-dirs:     src
+
+  build-depends: base >=4.7 && <5
+               , aeson
+               , asn1-encoding
+               , asn1-types
+               , base64-bytestring
+               , bytestring
+               , cryptonite
+               , data-default-class
+               , directory
+               , filepath
+               , hourglass
+               , ip
+               , universum
+               , unordered-containers
+               , x509
+               , x509-store
+               , x509-validation
+               , yaml
+
+  exposed-modules: Data.X509.Extra
+                   Bcc.X509.Configuration
+
+test-suite bcc-sl-x509-test
+  default-language:   Haskell2010
+  default-extensions: DeriveGeneric
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      TupleSections
+                      TypeApplications
+
+  type:               exitcode-stdio-1.0
+
+  hs-source-dirs:     test
+  main-is:            Main.hs
+  other-modules:      Test.Bcc.X509.Configuration.Arbitrary
+                      Test.Bcc.X509.Configuration
+
+  build-depends:      base
+                    , QuickCheck
+                    , bcc-sl-x509
+                    , universum
+                    , hedgehog
+                    , bcc-sl-util-test

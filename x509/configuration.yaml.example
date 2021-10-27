@@ -1,0 +1,21 @@
+dev:
+  tls:
+    ca:
+      organization: Input Output HK
+      commonName: Bcc SL Self-Signed Root CA
+      expiryDays: 3650
+
+    server:
+      organization: Input Output HK
+      commonName: Bcc SL Server Node
+      expiryDays: 365
+      altDNS:
+        - "localhost"
+        - "localhost.localdomain"
+        - "127.0.0.1"
+        - "::1"
+
+    clients:
+      - organization: Input Output HK
+        commonName: Bezalel Wallet
+        expiryDays: 365

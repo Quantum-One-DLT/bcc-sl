@@ -1,0 +1,59 @@
+name:                bcc-sl-infra-test
+version:             3.2.0
+synopsis:            Bcc SL - generators for bcc-sl-infra
+description:         This package contains generators for the infrastructural data types used in Bcc SL.
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              TBCO
+maintainer:          TBCO <support@bcccoin.io>
+copyright:           2021 TBCO
+category:            Currency
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+                       Test.Pos.Infra.Arbitrary
+                       Test.Pos.Infra.Arbitrary.Communication
+                       Test.Pos.Infra.Arbitrary.Slotting
+                       Test.Pos.Infra.Arbitrary.Ssc
+                       Test.Pos.Infra.Arbitrary.Txp
+                       Test.Pos.Infra.Arbitrary.Update
+                       Test.Pos.Infra.Bi
+                       Test.Pos.Infra.Diffusion.Subscription.StatusSpec
+                       Test.Pos.Infra.Diffusion.Subscription.SubscriptionSpec
+                       Test.Pos.Infra.Gen
+                       Test.Pos.Infra.Json
+
+  build-depends:       QuickCheck
+                     , async
+                     , base
+                     , bytestring
+                     , bcc-sl-binary-test
+                     , bcc-sl-chain
+                     , bcc-sl-chain-test
+                     , bcc-sl-core
+                     , bcc-sl-core-test
+                     , bcc-sl-crypto
+                     , bcc-sl-crypto-test
+                     , bcc-sl-infra
+                     , bcc-sl-networking
+                     , bcc-sl-util-test
+                     , containers
+                     , dns
+                     , generic-arbitrary
+                     , hedgehog
+                     , hspec
+                     , iproute
+                     , universum
+                     , yaml
+
+  default-language:    Haskell2010
+
+  ghc-options:         -Wall
+                       -O2
+                       -threaded
+
+  default-extensions:  NoImplicitPrelude

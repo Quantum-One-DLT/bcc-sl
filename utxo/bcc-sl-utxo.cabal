@@ -1,0 +1,74 @@
+name:                bcc-sl-utxo
+version:             3.2.0
+synopsis:            Abstract definitions of UTxO based accounting
+-- description:
+homepage:            https://github.com/The-Blockchain-Company/bcc-sl/#readme
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              TBCO Engineering Team
+maintainer:          operations@bcccoin.io
+copyright:           2017-2021 TBCO
+category:            Testing
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     UTxO.DSL
+                       UTxO.Bootstrap
+                       UTxO.Context
+                       UTxO.Crypto
+                       UTxO.Generator
+                       UTxO.IntTrans
+                       UTxO.Translate
+                       UTxO.Util
+                       UTxO.Verify
+
+                       Data.Validated
+  -- other-modules:
+  build-depends:       base >=4.10 && <4.12
+                     , QuickCheck
+                     , bcc-sl
+                     , bcc-sl-binary
+                     , bcc-sl-chain
+                     , bcc-sl-chain-test
+                     , bcc-sl-client
+                     , bcc-sl-core
+                     , bcc-sl-core-test
+                     , bcc-sl-crypto
+                     , bcc-sl-db
+                     , bcc-sl-util
+                     , constraints
+                     , containers
+                     , cryptonite
+                     , data-default >= 0.7
+                     , formatting
+                     , lens
+                     , mtl
+                     , reflection >= 2.1
+                     , safecopy
+                     , serokell-util
+                     , universum
+                     , unordered-containers
+                     , vector
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions: BangPatterns
+                      ConstraintKinds
+                      DeriveGeneric
+                      FlexibleContexts
+                      FlexibleInstances
+                      GADTs
+                      InstanceSigs
+                      LambdaCase
+                      MultiParamTypeClasses
+                      MultiWayIf
+                      NoImplicitPrelude
+                      OverloadedStrings
+                      RankNTypes
+                      RecordWildCards
+                      ScopedTypeVariables
+                      StandaloneDeriving
+                      TypeFamilies

@@ -1,0 +1,80 @@
+name:                bcc-sl-chain-test
+version:             3.2.0
+synopsis:            Bcc SL - arbitrary instances for bcc-sl-chain
+description:         Bcc SL - arbitrary instances for bcc-sl-chain
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              Rupert Horlick
+maintainer:          rupert.horlick@bcccoin.io
+copyright:           2021 TBCO
+category:            Currency
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Test.Pos.Chain.Block.Arbitrary
+                       Test.Pos.Chain.Block.Arbitrary.Generate
+                       Test.Pos.Chain.Block.Bi
+                       Test.Pos.Chain.Block.Gen
+                       Test.Pos.Chain.Delegation.Arbitrary
+                       Test.Pos.Chain.Delegation.Example
+                       Test.Pos.Chain.Delegation.Gen
+                       Test.Pos.Chain.Genesis.Arbitrary
+                       Test.Pos.Chain.Genesis.Example
+                       Test.Pos.Chain.Genesis.Dummy
+                       Test.Pos.Chain.Genesis.Gen
+                       Test.Pos.Chain.Genesis.Json
+                       Test.Pos.Chain.Lrc.Arbitrary
+                       Test.Pos.Chain.Ssc.Arbitrary
+                       Test.Pos.Chain.Ssc.Example
+                       Test.Pos.Chain.Ssc.Gen
+                       Test.Pos.Chain.Ssc.Json
+                       Test.Pos.Chain.Txp.Arbitrary
+                       Test.Pos.Chain.Txp.Arbitrary.Unsafe
+                       Test.Pos.Chain.Txp.Bi
+                       Test.Pos.Chain.Txp.Example
+                       Test.Pos.Chain.Txp.Gen
+                       Test.Pos.Chain.Txp.Json
+                       Test.Pos.Chain.Update.Arbitrary
+                       Test.Pos.Chain.Update.Example
+                       Test.Pos.Chain.Update.Gen
+
+  build-depends:       aeson
+                     , base
+                     , base16-bytestring
+                     , bytestring
+                     , bcc-crypto
+                     , bcc-sl-binary-test
+                     , bcc-sl-binary
+                     , bcc-sl-chain
+                     , bcc-sl-core
+                     , bcc-sl-core-test
+                     , bcc-sl-crypto
+                     , bcc-sl-crypto-test
+                     , bcc-sl-util
+                     , bcc-sl-util-test
+                     , containers
+                     , cryptonite
+                     , data-default
+                     , formatting
+                     , generic-arbitrary
+                     , hedgehog
+                     , pvss
+                     , QuickCheck
+                     , random
+                     , reflection
+                     , serokell-util
+                     , time-units
+                     , universum
+                     , unordered-containers
+                     , vector
+
+  default-language:    Haskell2010
+
+  default-extensions:  NoImplicitPrelude
+                       OverloadedStrings
+
+  ghc-options:         -Wall
+                       -O2

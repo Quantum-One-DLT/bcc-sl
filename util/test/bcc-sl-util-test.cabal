@@ -1,0 +1,91 @@
+name:                bcc-sl-util-test
+version:             3.2.0
+synopsis:            Bcc SL - general utilities (tests)
+description:         QuickCheck Arbitrary instances for the Bcc SL general
+                     utilities package.
+license:             Apache-2.0
+license-files:
+  LICENSE
+  NOTICE
+author:              Serokell
+maintainer:          hi@serokell.io
+copyright:           2021 The-Blockchain-Company
+category:            Currency
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+                       Test.Pos.Util.Base16
+                       Test.Pos.Util.Gen
+                       Test.Pos.Util.Golden
+                       Test.Pos.Util.Modifier
+                       Test.Pos.Util.Orphans
+                       Test.Pos.Util.Parallel.Parallelize
+                       Test.Pos.Util.QuickCheck
+                       Test.Pos.Util.QuickCheck.Property
+                       Test.Pos.Util.QuickCheck.Arbitrary
+                       Test.Pos.Util.Tripping
+
+  build-depends:       QuickCheck
+                     , aeson
+                     , aeson-pretty
+                     , attoparsec
+                     , base
+                     , base16-bytestring
+                     , bytestring
+                     , canonical-json
+                     , bcc-sl-util
+                     , cereal
+                     , cryptonite
+                     , directory
+                     , file-embed
+                     , filepath
+                     , formatting
+                     , hedgehog
+                     , hspec
+                     , mtl
+                     , pretty-show
+                     , quickcheck-instances
+                     , safecopy
+                     , template-haskell
+                     , text
+                     , time-units
+                     , universum
+                     , unordered-containers
+                     , yaml
+
+  default-language:    Haskell2010
+
+  default-extensions:  DeriveDataTypeable
+                       DeriveGeneric
+                       DeriveFunctor
+                       DeriveFoldable
+                       DeriveTraversable
+                       GeneralizedNewtypeDeriving
+                       StandaloneDeriving
+                       FlexibleContexts
+                       FlexibleInstances
+                       MultiParamTypeClasses
+                       FunctionalDependencies
+                       DefaultSignatures
+                       NoImplicitPrelude
+                       OverloadedStrings
+                       TypeApplications
+                       TupleSections
+                       ViewPatterns
+                       LambdaCase
+                       MultiWayIf
+                       ConstraintKinds
+                       UndecidableInstances
+                       BangPatterns
+                       TemplateHaskell
+                       ScopedTypeVariables
+                       MonadFailDesugaring
+                       GADTs
+
+  ghc-options:         -Wall
+                       -O2
+
+  build-tools: cpphs >= 1.19
+  ghc-options: -pgmP cpphs -optP --cpp
