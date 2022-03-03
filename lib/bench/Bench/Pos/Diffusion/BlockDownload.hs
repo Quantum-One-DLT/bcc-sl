@@ -79,7 +79,6 @@ blockVersion :: BlockVersion
 blockVersion = BlockVersion
     { bvMajor = 0
     , bvSentry = 0
-    , bvAlt   = 0
     }
 
 someHash :: forall a . Hash a

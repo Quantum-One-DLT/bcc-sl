@@ -117,7 +117,6 @@ appNameL = key "update"
 
 bvL = key "update" . key "lastKnownBlockVersion"
 
-bvAltL = bvL . key "bvAlt" . _Number
 bvSentryL = bvL . key "bvSentry" . _Number
 bvMajorL = bvL . key "bvMajor" . _Number
 
@@ -128,7 +127,6 @@ updateTest config (Config{..}) = do
         cFile' = T.pack $ F.encodeString cFile
         (proposeUpdStr, cNodes) = fromMaybe (error "Failed to form update proposal cmd") $ do
             tag <- config ^? tagL
-            bvAlt <- config ^? bvAltL
             bvSentry <- config ^? bvSentryL
             bvMajor <- config ^? bvMajorL
             genSlot <- config ^? genSlotL
@@ -144,7 +142,7 @@ updateTest config (Config{..}) = do
                     <> " system: " <> T.pack (show tag)
                     <> " installer-path: ./test_updater.sh"
             return $ (,cNodes) $ "propose-update i:0"
-              <> " block-version: " <> showF bvMajor <> "." <> showF bvSentry <> "." <> showF bvAlt
+              <> " block-version: " <> showF bvMajor <> "." <> showF bvSentry
               <> " software-version: ~software~" <> walletAppName <> ":" <> showF (sv + 1)
               <> " bvm: (" <> bvmStr <> ")"
               <> " update: (" <> updStr <> ")"

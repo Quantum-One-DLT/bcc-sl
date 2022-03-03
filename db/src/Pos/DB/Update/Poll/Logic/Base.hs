@@ -126,10 +126,8 @@ canBeProposedBV bv =
 canBeProposedPure :: BlockVersion -> BlockVersion -> Set BlockVersion -> BVChange
 canBeProposedPure BlockVersion { bvMajor = givenMajor
                                , bvSentry = givenSentry
-                               , bvAlt = givenAlt
                                } BlockVersion { bvMajor = adoptedMajor
                                               , bvSentry = adoptedSentry
-                                              , bvAlt = adoptedAlt
                                               } proposed
     | givenMajor < adoptedMajor = BVInvalid
     | givenMajor > adoptedMajor + 1 = BVInvalid
@@ -137,26 +135,24 @@ canBeProposedPure BlockVersion { bvMajor = givenMajor
     | givenMajor == adoptedMajor &&
           givenSentry /= adoptedSentry && givenSentry /= adoptedSentry + 1 = BVInvalid
     | (givenMajor, givenSentry) == (adoptedMajor, adoptedSentry) =
-        if givenAlt == adoptedAlt
+        if givenSentry == adoptedSentry
            then BVNoChange
            else BVInvalid
     -- At this point we know that
     -- '(givenMajor, givenSentry) > (adoptedMajor, adoptedSentry)'
     | null relevantProposed =
-        if givenAlt == 0
+        if givenSentry == 0
            then BVIncrement
            else BVInvalid
     | otherwise =
-        if (givenAlt == (S.findMax relevantProposed + 1) ||
-            givenAlt `S.member` relevantProposed)
+        if (givenSentry == (S.findMax relevantProposed + 1) ||
+            givenSentry `S.member` relevantProposed)
            then BVIncrement
            else BVInvalid
   where
-    -- Here we can use mapMonotonic, even though 'bvAlt' itself is not
-    -- necessary monotonic.
-    -- That's because after filtering all versions have same major and sentry
+    -- After filtering all versions have same major and sentry
     -- components.
-    relevantProposed = S.mapMonotonic bvAlt $ S.filter predicate proposed
+    relevantProposed = S.mapMonotonic bvSentry $ S.filter predicate proposed
     predicate BlockVersion {..} = bvMajor == givenMajor && bvSentry == givenSentry
 
 -- | Check whether given 'BlockVersion' can be adopted according to

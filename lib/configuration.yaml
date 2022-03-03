@@ -80,7 +80,6 @@ dev: &dev
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
   ssc: &dev_ssc
     mpcSendInterval: 10 # must be less than (2 * k * slotDuration - networkDiameter)
@@ -121,12 +120,12 @@ dev: &dev
 
   tls: &dev_tls
     ca:
-      organization: "Input Output HK"
+      organization: "The Blockchain Company.io"
       commonName: "Bcc SL Self-Signed Root CA"
       expiryDays: 3650
 
     server:
-      organization: "Input Output HK"
+      organization: "The Blockchain Company.io"
       commonName: "Bcc SL Server Node"
       expiryDays: 365
       altDNS:
@@ -136,8 +135,8 @@ dev: &dev
         - "::1"
 
     clients:
-      - organization: "Input Output HK"
-        commonName: "Bezalel Wallet"
+      - organization: "The Blockchain Company.io"
+        commonName: "Klarity Wallet"
         expiryDays: 365
 
   wallet: &dev_wallet
@@ -337,7 +336,6 @@ mainnet_base: &mainnet_base
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 2
-      bvAlt: 0
 
   ssc:
     mpcSendInterval: 100 # must be less than (2 * k * slotDuration - networkDiameter)
@@ -378,12 +376,12 @@ mainnet_base: &mainnet_base
 
   tls: &mainnet_base_tls
     ca:
-      organization: "Input Output HK"
+      organization: "The Blockchain Company.io"
       commonName: "Bcc SL Self-Signed Root CA"
       expiryDays: 3650
 
     server:
-      organization: "Input Output HK"
+      organization: "The Blockchain Company.io"
       commonName: "Bcc SL Server Node"
       expiryDays: 365
       altDNS:
@@ -393,8 +391,8 @@ mainnet_base: &mainnet_base
         - "::1"
 
     clients:
-      - organization: "Input Output HK"
-        commonName: "Bezalel Wallet"
+      - organization: "The Blockchain Company.io"
+        commonName: "Klarity Wallet"
         expiryDays: 365
 
   wallet: &mainnet_base_wallet
@@ -14856,7 +14854,6 @@ mainnet_wallet_win64: &mainnet_wallet_win64
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 1
-      bvAlt: 0
 
 mainnet_wallet_macos64: &mainnet_wallet_macos64
   <<: *mainnet_full
@@ -14866,7 +14863,6 @@ mainnet_wallet_macos64: &mainnet_wallet_macos64
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 1
-      bvAlt: 0
 
 mainnet_wallet_linux64: &mainnet_wallet_linux64
   <<: *mainnet_full
@@ -14876,7 +14872,6 @@ mainnet_wallet_linux64: &mainnet_wallet_linux64
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 1
-      bvAlt: 0
 
 
 ##############################################################################
@@ -14923,7 +14918,6 @@ mainnet_ci_full: &mainnet_ci_full
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 ##############################################################################
 ##                                                                          ##
@@ -14986,7 +14980,6 @@ testnet_full: &testnet_full
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 testnet_wallet: &testnet_wallet
   <<: *testnet_full
@@ -14996,7 +14989,6 @@ testnet_wallet: &testnet_wallet
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 testnet_wallet_win64: &testnet_wallet_win64
   <<: *testnet_wallet
@@ -15062,7 +15054,6 @@ sophie_staging_full: &sophie_staging_full
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 sophie_staging_wallet: &sophie_staging_wallet
   <<: *sophie_staging_full
@@ -15072,7 +15063,6 @@ sophie_staging_wallet: &sophie_staging_wallet
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 sophie_staging_wallet_win64: &sophie_staging_wallet_win64
   <<: *sophie_staging_wallet
@@ -15137,7 +15127,6 @@ sophie_staging_short_full: &sophie_staging_short_full
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 sophie_staging_short_wallet: &sophie_staging_short_wallet
   <<: *sophie_staging_short_full
@@ -15147,7 +15136,6 @@ sophie_staging_short_wallet: &sophie_staging_short_wallet
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 sophie_staging_short_wallet_win64: &sophie_staging_short_wallet_win64
   <<: *sophie_staging_short_wallet
@@ -15182,7 +15170,6 @@ mainnet_dryrun_full: &mainnet_dryrun_full
     lastKnownBlockVersion:
       bvMajor: 1
       bvSentry: 0
-      bvAlt: 0
 
 mainnet_dryrun_wallet_win64: &mainnet_dryrun_wallet_win64
   <<: *mainnet_dryrun_full
@@ -15192,7 +15179,6 @@ mainnet_dryrun_wallet_win64: &mainnet_dryrun_wallet_win64
     lastKnownBlockVersion:
       bvMajor: 1
       bvSentry: 0
-      bvAlt: 0
 
 mainnet_dryrun_wallet_macos64: &mainnet_dryrun_wallet_macos64
   <<: *mainnet_dryrun_full
@@ -15202,7 +15188,6 @@ mainnet_dryrun_wallet_macos64: &mainnet_dryrun_wallet_macos64
     lastKnownBlockVersion:
       bvMajor: 1
       bvSentry: 0
-      bvAlt: 0
 
 mainnet_dryrun_wallet_linux64: &mainnet_dryrun_wallet_linux64
   <<: *mainnet_dryrun_full
@@ -15212,7 +15197,6 @@ mainnet_dryrun_wallet_linux64: &mainnet_dryrun_wallet_linux64
     lastKnownBlockVersion:
       bvMajor: 1
       bvSentry: 0
-      bvAlt: 0
 
 ##############################################################################
 ##                                                                          ##
@@ -15236,7 +15220,6 @@ mainnet_staging_short_epoch_full: &mainnet_staging_short_epoch_full
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 mainnet_staging_short_epoch_wallet_win64:
   <<: *mainnet_staging_short_epoch_full
@@ -15246,7 +15229,6 @@ mainnet_staging_short_epoch_wallet_win64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 mainnet_staging_short_epoch_wallet_macos64:
   <<: *mainnet_staging_short_epoch_full
@@ -15256,7 +15238,6 @@ mainnet_staging_short_epoch_wallet_macos64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 mainnet_staging_short_epoch_wallet_linux64:
   <<: *mainnet_staging_short_epoch_full
@@ -15266,7 +15247,6 @@ mainnet_staging_short_epoch_wallet_linux64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 ##############################################################################
 ##                                                                          ##
@@ -15317,7 +15297,6 @@ devnet: &devnet
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
     systemTag: none
 
   node:
@@ -15334,7 +15313,6 @@ devnet_win64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
     systemTag: win64
 
 devnet_macos64:
@@ -15346,7 +15324,6 @@ devnet_macos64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
     systemTag: macos64
 
 devnet_linux64:
@@ -15358,7 +15335,6 @@ devnet_linux64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
     systemTag: linux
 
 ##############################################################################
@@ -15409,7 +15385,6 @@ internal_staging_full: &internal_staging_full
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
     systemTag: none
 
 # Wallets
@@ -15421,7 +15396,6 @@ internal_staging_wallet_win64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 internal_staging_wallet_macos64:
   <<: *internal_staging_full
@@ -15431,7 +15405,6 @@ internal_staging_wallet_macos64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
 
 internal_staging_wallet_linux64:
   <<: *internal_staging_full
@@ -15441,4 +15414,3 @@ internal_staging_wallet_linux64:
     lastKnownBlockVersion:
       bvMajor: 0
       bvSentry: 0
-      bvAlt: 0
