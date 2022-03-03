@@ -78,7 +78,7 @@ protocolConstants = ProtocolConstants
 blockVersion :: BlockVersion
 blockVersion = BlockVersion
     { bvMajor = 0
-    , bvMinor = 0
+    , bvSentry = 0
     , bvAlt   = 0
     }
 

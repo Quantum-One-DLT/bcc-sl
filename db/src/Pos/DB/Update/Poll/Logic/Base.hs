@@ -98,23 +98,23 @@ data BVChange = BVIncrement
 -- | Check whether given 'BlockVersion' can be proposed according to
 -- current Poll.
 --
--- Specifically, the following rules regarding major and minor versions
+-- Specifically, the following rules regarding major and sentry versions
 -- take place:
 -- 1. If major version is less than last adopted one, it can't be proposed.
 -- 2. If major version is more than '1' greater than last adopted one,
 -- it can't be proposed as well.
--- 3. If major version is greater than last adopted one by '1', then minor
+-- 3. If major version is greater than last adopted one by '1', then sentry
 -- version must be '0'.
--- 4. If major version is equal to the last adopted one, then minor version
+-- 4. If major version is equal to the last adopted one, then sentry version
 -- can be either same as the last adopted one or greater by '1'.
 -- Rules regarding alternative version are as follows (assuming
 -- checks above pass):
--- 1. If '(Major, Minor)' of given version is equal to '(Major, Minor)' of
+-- 1. If '(Major, Sentry)' of given version is equal to '(Major, Sentry)' of
 -- last adopted version, then alternative version must be equal to
 -- alternative version of last adopted version.
--- 2. Otherwise '(Major, Minor)' of given version is lexicographically greater
--- than '(Major, Minor)' of last adopted version and in this case
--- other proposed block versions with same '(Major, Minor)' are considered
+-- 2. Otherwise '(Major, Sentry)' of given version is lexicographically greater
+-- than '(Major, Sentry)' of last adopted version and in this case
+-- other proposed block versions with same '(Major, Sentry)' are considered
 -- (let's call this set 'X').
 -- If 'X' is empty, given alternative version must be 0.
 -- Otherwise it must be in 'X' or greater than maximum from 'X' by one.
@@ -125,23 +125,23 @@ canBeProposedBV bv =
 
 canBeProposedPure :: BlockVersion -> BlockVersion -> Set BlockVersion -> BVChange
 canBeProposedPure BlockVersion { bvMajor = givenMajor
-                               , bvMinor = givenMinor
+                               , bvSentry = givenSentry
                                , bvAlt = givenAlt
                                } BlockVersion { bvMajor = adoptedMajor
-                                              , bvMinor = adoptedMinor
+                                              , bvSentry = adoptedSentry
                                               , bvAlt = adoptedAlt
                                               } proposed
     | givenMajor < adoptedMajor = BVInvalid
     | givenMajor > adoptedMajor + 1 = BVInvalid
-    | givenMajor == adoptedMajor + 1 && givenMinor /= 0 = BVInvalid
+    | givenMajor == adoptedMajor + 1 && givenSentry /= 0 = BVInvalid
     | givenMajor == adoptedMajor &&
-          givenMinor /= adoptedMinor && givenMinor /= adoptedMinor + 1 = BVInvalid
-    | (givenMajor, givenMinor) == (adoptedMajor, adoptedMinor) =
+          givenSentry /= adoptedSentry && givenSentry /= adoptedSentry + 1 = BVInvalid
+    | (givenMajor, givenSentry) == (adoptedMajor, adoptedSentry) =
         if givenAlt == adoptedAlt
            then BVNoChange
            else BVInvalid
     -- At this point we know that
-    -- '(givenMajor, givenMinor) > (adoptedMajor, adoptedMinor)'
+    -- '(givenMajor, givenSentry) > (adoptedMajor, adoptedSentry)'
     | null relevantProposed =
         if givenAlt == 0
            then BVIncrement
@@ -154,37 +154,37 @@ canBeProposedPure BlockVersion { bvMajor = givenMajor
   where
     -- Here we can use mapMonotonic, even though 'bvAlt' itself is not
     -- necessary monotonic.
-    -- That's because after filtering all versions have same major and minor
+    -- That's because after filtering all versions have same major and sentry
     -- components.
     relevantProposed = S.mapMonotonic bvAlt $ S.filter predicate proposed
-    predicate BlockVersion {..} = bvMajor == givenMajor && bvMinor == givenMinor
+    predicate BlockVersion {..} = bvMajor == givenMajor && bvSentry == givenSentry
 
 -- | Check whether given 'BlockVersion' can be adopted according to
 -- current Poll.
 --
--- Specifically, the following rules regarding major and minor versions
+-- Specifically, the following rules regarding major and sentry versions
 -- take place:
 -- 1. If major version is less than last adopted one, it can't be adopted.
 -- 2. If major version is more than '1' greater than last adopted one,
 -- it can't be adopted as well.
--- 3. If major version is greater than last adopted one by '1', then minor
+-- 3. If major version is greater than last adopted one by '1', then sentry
 -- version must be '0'.
--- 4. If major version is equal to the last adopted one, then minor version
--- can be greather than minor component of last adopted version by 1.
+-- 4. If major version is equal to the last adopted one, then sentry version
+-- can be greather than sentry component of last adopted version by 1.
 canBeAdoptedBV :: MonadPollRead m => BlockVersion -> m Bool
 canBeAdoptedBV bv = canBeAdoptedPure bv <$> getAdoptedBV
 
 canBeAdoptedPure :: BlockVersion -> BlockVersion -> Bool
 canBeAdoptedPure BlockVersion { bvMajor = givenMajor
-                              , bvMinor = givenMinor
+                              , bvSentry = givenSentry
                               }
                  BlockVersion { bvMajor = adoptedMajor
-                              , bvMinor = adoptedMinor
+                              , bvSentry = adoptedSentry
                               }
     | givenMajor < adoptedMajor = False
     | givenMajor > adoptedMajor + 1 = False
-    | givenMajor == adoptedMajor + 1 = givenMinor == 0
-    | otherwise = givenMinor == adoptedMinor + 1
+    | givenMajor == adoptedMajor + 1 = givenSentry == 0
+    | otherwise = givenSentry == adoptedSentry + 1
 
 -- | Adopt given block version. When it happens, last adopted block
 -- version is changed.

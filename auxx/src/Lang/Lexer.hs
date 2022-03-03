@@ -260,9 +260,7 @@ pBlockVersion :: Lexer BlockVersion
 pBlockVersion = do
     bvMajor <- decimal
     void $ char '.'
-    bvMinor <- decimal
-    void $ char '.'
-    bvAlt <- decimal
+    bvSentry <- decimal
     notFollowedBy $ char '.'
     return BlockVersion{..}
 

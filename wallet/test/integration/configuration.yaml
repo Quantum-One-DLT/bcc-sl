@@ -71,7 +71,7 @@ default: &default
     applicationVersion: 0
     lastKnownBlockVersion:
       bvMajor: 0
-      bvMinor: 0
+      bvSentry: 0
       bvAlt: 0
 
   ssc: &default_ssc

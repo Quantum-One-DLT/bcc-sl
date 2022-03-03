@@ -20,8 +20,7 @@ genesisBlockVersion :: BlockVersion
 genesisBlockVersion =
     BlockVersion
     { bvMajor = 0
-    , bvMinor = 0
-    , bvAlt = 0
+    , bvSentry = 0
     }
 
 -- | Software Versions

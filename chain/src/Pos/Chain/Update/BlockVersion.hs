@@ -17,12 +17,11 @@ import           Pos.Util.Some (Some, liftLensSome)
 -- | Communication protocol version.
 data BlockVersion = BlockVersion
     { bvMajor :: !Word16
-    , bvMinor :: !Word16
-    , bvAlt   :: !Word8
+    , bvSentry :: !Word16
     } deriving (Eq, Generic, Ord, Typeable, Show)
 
 instance Buildable BlockVersion where
-    build BlockVersion{..} = fromString $ intercalate "." [show bvMajor, show bvMinor, show bvAlt]
+    build BlockVersion{..} = fromString $ intercalate "." [show bvMajor, show bvSentry]
 
 instance Hashable BlockVersion
 
@@ -39,8 +38,7 @@ deriveJSON defaultOptions ''BlockVersion
 deriveSimpleBi ''BlockVersion [
     Cons 'BlockVersion [
         Field [| bvMajor :: Word16 |],
-        Field [| bvMinor :: Word16 |],
-        Field [| bvAlt   :: Word8  |]
+        Field [| bvSentry :: Word16 |]
     ]]
 
 deriveSafeCopySimple 0 'base ''BlockVersion

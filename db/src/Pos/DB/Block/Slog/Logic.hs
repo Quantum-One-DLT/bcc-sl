@@ -95,16 +95,16 @@ import           Pos.Util.Wlog (WithLogger, logInfo)
 -- 1.2.3 |  1.1.1  | Yes
 -- 2.2.8 |  1.9.9  | Yes
 --
--- If `(major, minor)` of our version is greater than of adopted
+-- If `(major, sentry)` of our version is greater than of adopted
 -- one, then check is certainly done. If it's equal, then check is
 -- done only if `alt` component is the same as adopted one. In
--- other cases (i. e. when our `(major, minor)` is less than from
+-- other cases (i. e. when our `(major, sentry)` is less than from
 -- adopted version) check is not done.
 mustDataBeKnown :: UpdateConfiguration -> BlockVersion -> Bool
 mustDataBeKnown uc adoptedBV =
     lastKnownMajMin > adoptedMajMin || lastKnownBlockVersion uc == adoptedBV
   where
-    toMajMin BlockVersion {..} = (bvMajor, bvMinor)
+    toMajMin BlockVersion {..} = (bvMajor, bvSentry)
     lastKnownMajMin = toMajMin (lastKnownBlockVersion uc)
     adoptedMajMin = toMajMin adoptedBV
 

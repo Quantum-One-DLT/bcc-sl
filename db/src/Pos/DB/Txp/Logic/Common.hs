@@ -35,7 +35,7 @@ buildUtxo = buildUtxoGeneric (toList . _txInputs)
 -- Note: it's may seem unnecessary to do lookup in DB, because we know
 -- transaction outputs, but we need to know whether the input is in
 -- DB. It can be slightly optimized by not deserialiaing data from DB,
--- but it's minor, because rollbacks are rare.
+-- but it's sentry, because rollbacks are rare.
 --
 -- Note2: we don't really need to build base 'Utxo' for rollback, we
 -- can just delete and add some entries to utxo without checking
