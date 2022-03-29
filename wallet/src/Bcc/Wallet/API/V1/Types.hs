@@ -922,7 +922,7 @@ unsafeMkAccountIndex =
     either (error . sformat build) identity . mkAccountIndex
 
 instance Bounded AccountIndex where
-    -- NOTE: minimum for hardened key. See https://bcccoin.myjetbrains.com/youtrack/issue/CO-309
+    -- NOTE: minimum for hardened key. See https://tbco.myjetbrains.com/youtrack/issue/CO-309
     minBound = AccountIndex 2147483648
     maxBound = AccountIndex maxBound
 

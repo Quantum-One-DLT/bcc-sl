@@ -99,7 +99,7 @@ let
     ];
     serverAltDNSExtra = [];
 
-    clientCommonName = "Bezalel Wallet";
+    clientCommonName = "Klarity Wallet";
     clientExpiryDays = 365;
   } // tlsConfig;
   tlsConfigFile = let cfg = tlsConfigResultant; in writeText "tls-config-${environment}.yaml" (''

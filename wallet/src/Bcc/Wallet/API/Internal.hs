@@ -1,6 +1,6 @@
 -- | This module contains the top level API definition for frontend-related
 -- tasks.  The API endpoints presented here are intended for use with the
--- Bezalel client, and aren't useful for wallets, exchanges, and other users.
+-- Klarity client, and aren't useful for wallets, exchanges, and other users.
 module Bcc.Wallet.API.Internal where
 
 import Prelude
@@ -15,7 +15,7 @@ import           Bcc.Wallet.API.V1.Types (V1, Wallet, WalletImport, BackupPhrase
 
 type API = Tag "Internal" ('TagDescription
     "This section contains endpoints so-called 'Internal'. They are only\
-    \ expected to be used by advanced users of the API (e.g. Bezalel) with\
+    \ expected to be used by advanced users of the API (e.g. Klarity) with\
     \ which there's a privileged communication channel. Backward-compatibility\
     \ or existence of these endpoints between versions is not guaranteed and\
     \ won't be enforced. Use at your own risks.")

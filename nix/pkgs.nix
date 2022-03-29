@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {}
-, bcccoin-extras ? {}
-, bcccoin-module ? {}
+, tbco-extras ? {}
+, tbco-module ? {}
 , haskell
 , ...
 }:
@@ -20,13 +20,13 @@ let
   pkgSet = haskell.mkStackPkgSet {
     inherit stack-pkgs;
     pkg-def-extras = [
-      bcccoin-extras.${compiler.nix-name}
+      tbco-extras.${compiler.nix-name}
     ];
     modules = [
-      # the bcccoin-module will supply us with the necessary
+      # the tbco-module will supply us with the necessary
       # cross compilation plumbing to make Template Haskell
       # work when cross compiling.
-      bcccoin-module
+      tbco-module
       {
         # Packages we wish to ignore version bounds of.
         # This is similar to jailbreakCabal, however it

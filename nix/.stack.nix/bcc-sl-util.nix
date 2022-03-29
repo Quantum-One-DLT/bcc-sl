@@ -6,7 +6,7 @@
       identifier = { name = "bcc-sl-util"; version = "3.2.0"; };
       license = "Apache-2.0";
       copyright = "2021 The-Blockchain-Company";
-      maintainer = "support@bcccoin.io";
+      maintainer = "support@blockchain-company.io";
       author = "TBCO";
       homepage = "https://github.com/The-Blockchain-Company/bcc-sl";
       url = "";

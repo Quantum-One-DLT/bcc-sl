@@ -124,7 +124,7 @@ commonNodeArgsParser = do
         long    "keyfile" <>
         metavar "FILEPATH" <>
         value   "secret.key" <>
-        help    "Path to file with secret key (we use it for Bezalel)."
+        help    "Path to file with secret key (we use it for Klarity)."
     networkConfigOpts <- networkConfigOption
     jlPath <-
         optionalJSONPath

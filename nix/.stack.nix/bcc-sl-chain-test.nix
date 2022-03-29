@@ -6,7 +6,7 @@
       identifier = { name = "bcc-sl-chain-test"; version = "3.2.0"; };
       license = "Apache-2.0";
       copyright = "2021 TBCO";
-      maintainer = "rupert.horlick@bcccoin.io";
+      maintainer = "rupert.horlick@blockchain-company.io";
       author = "Rupert Horlick";
       homepage = "";
       url = "";

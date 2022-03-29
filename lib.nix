@@ -7,7 +7,7 @@ let
     inherit (sources."haskell.nix") rev sha256;
     url = "https://github.com/${src.owner}/${src.repo}";
   };
-  tbcoNix = import sources.bcccoin-nix { haskellNixJsonOverride = pkgs'.writeText "haskell-nix.json" haskellNixJson; };
+  tbcoNix = import sources.tbco-nix { haskellNixJsonOverride = pkgs'.writeText "haskell-nix.json" haskellNixJson; };
   pkgs = tbcoNix.pkgs;
   lib = pkgs.lib;
   niv = (import sources.niv {}).niv;

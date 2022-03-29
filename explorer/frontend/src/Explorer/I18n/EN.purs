@@ -138,7 +138,7 @@ translation =
         , fooGithub: "Github"
         , fooEmail: "Email"
         , fooTwitter: "Twitter"
-        , fooKlarityPlatform: "Bezalel Platform"
+        , fooKlarityPlatform: "Klarity Platform"
         , fooWhyBcc: "Why Bcc"
         , fooBccRoadmap: "Bcc Roadmap"
         , fooBccSource: "Bcc Source"

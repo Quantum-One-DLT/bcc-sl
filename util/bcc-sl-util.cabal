@@ -10,7 +10,7 @@ license-files:
   NOTICE
 homepage:            https://github.com/The-Blockchain-Company/bcc-sl
 author:              TBCO
-maintainer:          support@bcccoin.io
+maintainer:          support@blockchain-company.io
 copyright:           2021 The-Blockchain-Company
 category:            Currency
 build-type:          Simple

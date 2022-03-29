@@ -354,7 +354,7 @@ applyHistoricalBlock k context rootId blocks =
             -- resume restoration, this would lead to restoration restarting from
             -- scratch for synced wallet.
             -- The above is a valid concern, but can happen only if we created
-            -- an account outside this wallet node, and currently neither Bezalel
+            -- an account outside this wallet node, and currently neither Klarity
             -- nor exchanges do this. Fix as an improvement as part of [CBR-450].
             case acc ^. hdAccountState of
                 -- Don't do anything for up-to-date accounts. That's not our

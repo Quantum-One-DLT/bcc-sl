@@ -74,7 +74,7 @@ Please note that each of parties should generate its own stakeholders' secret ke
 certificates. Thus, TBCO nominated individuals should execute this script:
 
 ```
-STAKEHOLDER_NAME=bcccoin STAKEHOLDER_PUBLIC=<public ouput dir> STAKEHOLDER_SECRET=<bcccoin secret keys dir> DELEGATE_PUBS=<path to list of all dpks> REPO_PATH=<path-to-repo> bash <path-to-repo>/scripts/prepare-genesis/keys-and-certs.sh  2>&1 | tee step2-bcccoin.log
+STAKEHOLDER_NAME=tbco STAKEHOLDER_PUBLIC=<public ouput dir> STAKEHOLDER_SECRET=<tbco secret keys dir> DELEGATE_PUBS=<path to list of all dpks> REPO_PATH=<path-to-repo> bash <path-to-repo>/scripts/prepare-genesis/keys-and-certs.sh  2>&1 | tee step2-tbco.log
 ```
 
 CGG nominated individuals team should execute this one:

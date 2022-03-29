@@ -6,7 +6,7 @@
 Module      : JsonLog.Event
 Description : JSON log messages
 License:      MIT
-Maintainer:   lars.bruenjes@bcccoin.io
+Maintainer:   lars.bruenjes@blockchain-company.io
 Stability:    experimental
 Portability:  GHC
 

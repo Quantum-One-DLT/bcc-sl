@@ -23,20 +23,20 @@
         "url": "https://github.com/The-Blockchain-Company/haskell.nix/archive/3ae2303b14bdebd00437b0e995af2d0eb21abafe.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "bcccoin-nix": {
+    "tbco-nix": {
         "branch": "master",
         "description": "nix scripts shared across projects",
         "homepage": null,
         "owner": "The-Blockchain-Company",
-        "repo": "bcccoin-nix",
+        "repo": "tbco-nix",
         "rev": "4e47de68bcb7cb15efc42bada9e3ad63cef11635",
         "sha256": "04f9gaxj5i29i6rz9q242rpw5r4i9nz6lsgjp090mh6k9hwj632c",
         "type": "tarball",
-        "url": "https://github.com/The-Blockchain-Company/bcccoin-nix/archive/4e47de68bcb7cb15efc42bada9e3ad63cef11635.tar.gz",
+        "url": "https://github.com/The-Blockchain-Company/tbco-nix/archive/4e47de68bcb7cb15efc42bada9e3ad63cef11635.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
-        "branch": "bcccoin",
+        "branch": "tbco",
         "description": "Easy dependency management for Nix projects",
         "homepage": "https://github.com/nmattia/niv",
         "owner": "The-Blockchain-Company",
@@ -48,7 +48,7 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
-        "branch": "bcccoin-19.03",
+        "branch": "tbco-19.03",
         "description": "Nix Packages collection",
         "homepage": null,
         "owner": "The-Blockchain-Company",

@@ -145,7 +145,7 @@ notifierServer notifierSettings connVar = do
         origins =
             [ "https://bccexplorer.com"
             , "https://explorer.blockchain-company.io"
-            , "http://bcc-explorer.bcc-mainnet.bcccoin.io"
+            , "http://bcc-explorer.bcc-mainnet.blockchain-company.io"
             , "https://bcc-explorer.bcc-testnet.blockchain-company.io"
             , "http://localhost:3100"
             ]

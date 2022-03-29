@@ -9,7 +9,7 @@ ALL_NODES=("${TBCO_NODES[@]}" "${CGG_NODES[@]}" "${CF_NODES[@]}")
 CONF_PARAMS=("--configuration-file" "lib/configuration.yaml" "--configuration-key" "mainnet_launch_base")
 
 case "$STAKEHOLDER_NAME" in
-  bcccoin)
+  tbco)
     NODES=("${TBCO_NODES[@]}")
     ;;
   cgg)

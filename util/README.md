@@ -135,9 +135,9 @@ Logging is setup via a `LoggerConfig` and includes:
   * StdoutBE, StderrBE - output to `/dev/stdout` or `/dev/stderr`
   * DevNullBE - no output at all
 
-As an example, this is the configuration for `Bezalel`:
+As an example, this is the configuration for `Klarity`:
 ```
-# This config is used by Bezalel (in production).
+# This config is used by Klarity (in production).
 
 rotation:
     logLimit: 5242880 # 5MB

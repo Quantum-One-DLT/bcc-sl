@@ -5,7 +5,7 @@
 
 {
   nix = {
-    binaryCachePublicKeys = [ "hydra.bcccoin.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
-    binaryCaches = [ "https://hydra.bcccoin.io" ];
+    binaryCachePublicKeys = [ "hydra.blockchain-company.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
+    binaryCaches = [ "https://hydra.blockchain-company.io" ];
   };
 }

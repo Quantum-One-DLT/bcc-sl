@@ -5,7 +5,7 @@
 Module      : JsonLog.CanJsonLog
 Description : Class of monads that support JSON logging
 License:      MIT
-Maintainer:   lars.bruenjes@bcccoin.io
+Maintainer:   lars.bruenjes@blockchain-company.io
 Stability:    experimental
 Portability:  GHC
 

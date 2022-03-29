@@ -1,5 +1,5 @@
 wallet:
   relays:
-    - - host: relays.bcc-mainnet.bcccoin.io
+    - - host: relays.bcc-mainnet.blockchain-company.io
   valency: 1
   fallbacks: 7

@@ -122,10 +122,10 @@ select::-ms-expand {
   background-size: contain;
 }
 
-@svg-load bcccoin-logo url('../static/images/bcccoin-logo.svg');
+@svg-load tbco-logo url('../static/images/tbco-logo.svg');
 
-.bg-bcccoin-logo {
-  background-image: svg-inline(bcccoin-logo);
+.bg-tbco-logo {
+  background-image: svg-inline(tbco-logo);
   background-size: contain;
 }
 

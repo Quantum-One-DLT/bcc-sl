@@ -71,7 +71,7 @@ moveLegacyDB filepath = do
 -- When @forced@ is False we are lenient in logging any error and continuing
 -- rather than crashing the node. The rationale is that if
 -- we leave the node running, we would give the user a chance
--- to submit a bug report from the Bezalel interface.
+-- to submit a bug report from the Klarity interface.
 --
 -- However when @forced@ is True the migration is a all-or-nothing.
 -- If anything fails the node crashes.

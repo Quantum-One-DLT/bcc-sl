@@ -67,7 +67,7 @@ instance Arbitrary (Invalid TLSConfiguration) where
 instance Arbitrary CertConfiguration where
     arbitrary = CertConfiguration
         <$> elements ["TBCO", "The Blockchain Co", "Bcc Foundation"]
-        <*> elements ["Bezalel Wallet", "Icarus Wallet", "Prometheus", "Root CA"]
+        <*> elements ["Klarity Wallet", "Icarus Wallet", "Prometheus", "Root CA"]
         <*> arbitraryPositive
 
     shrink (CertConfiguration org name days) =
@@ -77,7 +77,7 @@ instance Arbitrary CertConfiguration where
 instance Arbitrary (Invalid CertConfiguration) where
     arbitrary = fmap Invalid $ CertConfiguration
         <$> elements ["TBCO", "The Blockchain Co", "Bcc Foundation"]
-        <*> elements ["Bezalel Wallet", "Icarus Wallet", "Prometheus", "Root CA"]
+        <*> elements ["Klarity Wallet", "Icarus Wallet", "Prometheus", "Root CA"]
         <*> choose (-10, 10)
 
     shrink (Invalid (CertConfiguration org name days)) =
@@ -130,7 +130,7 @@ instance Arbitrary AltNames where
 instance Arbitrary (Unknown AltNames) where
     arbitrary =
         fmap (Unknown . mkAltNames) $ listOf1 $ elements
-            [ "www.bcccoin.io"
+            [ "www.blockchain-company.io"
             , "14.14.14.14"
             , "2607:f0d0:1002:0051:0000:0000:0000:0004"
             ]

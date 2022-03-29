@@ -19,7 +19,7 @@ bash ./gen-delegate-keys.sh 2>&1 | tee -a "$LOG"
 # STEP 2: Stakeholder Keys and Certs (each stakeholder independently)
 
 # TBCO Org Rep
-bash ./bcccoin-keys-and-certs.sh 2>&1 | tee -a "$LOG"
+bash ./tbco-keys-and-certs.sh 2>&1 | tee -a "$LOG"
 # SGG Org Rep
 bash ./sgg-keys-and-certs.sh 2>&1 | tee -a "$LOG"
 # CF Org Rep

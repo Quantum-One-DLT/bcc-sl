@@ -6,7 +6,7 @@ include:
 * `bcc-dht-keygen` - Generate a DHT key.
 * `bcc-genupdate` - Generate an update for the Bcc SL network.
 * `bcc-keygen` - Generate keyfiles for the Bcc SL network.
-* `bcc-launcher` - A program that launches the Bcc SL code and the Bezalel
+* `bcc-launcher` - A program that launches the Bcc SL code and the Klarity
   wallet.
 * `bcc-addr-convert` - A tool to convert vending addresses between mainnet and
   testnet address format.

@@ -6,7 +6,7 @@
       identifier = { name = "bcc-sl-script-runner"; version = "3.2.0"; };
       license = "Apache-2.0";
       copyright = "2021 TBCO";
-      maintainer = "operations@bcccoin.io";
+      maintainer = "operations@blockchain-company.io";
       author = "TBCO";
       homepage = "";
       url = "";

@@ -1,4 +1,4 @@
-# This config is used by Bezalel (in production).
+# This config is used by Klarity (in production).
 
 rotation:
     logLimit: 5242880 # 5MB

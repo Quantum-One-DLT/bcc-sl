@@ -2,7 +2,7 @@
 Module      : JsonLog
 Description : Logging to JSON files
 License:      MIT
-Maintainer:   lars.bruenjes@bcccoin.io
+Maintainer:   lars.bruenjes@blockchain-company.io
 Stability:    experimental
 Portability:  GHC
 

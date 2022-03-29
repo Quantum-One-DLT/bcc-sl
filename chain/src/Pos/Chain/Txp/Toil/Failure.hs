@@ -19,7 +19,7 @@ import           Serokell.Data.Memory.Units (Byte, memory)
 import           Serokell.Util (listJson)
 
 import           Pos.Chain.Block.Header (HeaderHash)
-import           Pos.Chain.Script (GideonError)
+import           Pos.Chain.Script (ZerepochError)
 import           Pos.Chain.Txp.Toil.Types (TxFee)
 import           Pos.Chain.Txp.Tx (TxIn, TxOut (..))
 import           Pos.Chain.Txp.TxWitness (TxInWitness)
@@ -145,9 +145,9 @@ data WitnessVerFailure
     | WitnessScriptVerMismatch ScriptVersion ScriptVersion
     -- | Don't know how to handle script version
     | WitnessUnknownScriptVer ScriptVersion
-    -- | Gideon error (e.g. exhausted execution steps, redeemer script
+    -- | Zerepoch error (e.g. exhausted execution steps, redeemer script
     -- returning 'False', etc)
-    | WitnessScriptError GideonError
+    | WitnessScriptError ZerepochError
     -- | Don't know how to handle this witness type
     | WitnessUnknownType Word8
     deriving (Show, Eq, Generic, NFData)

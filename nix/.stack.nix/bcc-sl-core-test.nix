@@ -6,7 +6,7 @@
       identifier = { name = "bcc-sl-core-test"; version = "3.2.0"; };
       license = "Apache-2.0";
       copyright = "2021 TBCO";
-      maintainer = "TBCO <support@bcccoin.io>";
+      maintainer = "TBCO <support@blockchain-company.io>";
       author = "TBCO";
       homepage = "";
       url = "";

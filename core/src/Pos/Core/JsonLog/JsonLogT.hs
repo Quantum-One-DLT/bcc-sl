@@ -10,7 +10,7 @@
 Module      : JsonLog.JsonLogT
 Description : Monad transformer for JSON logging
 License:      MIT
-Maintainer:   lars.bruenjes@bcccoin.io
+Maintainer:   lars.bruenjes@blockchain-company.io
 Stability:    experimental
 Portability:  GHC
 

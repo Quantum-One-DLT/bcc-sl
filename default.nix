@@ -20,17 +20,17 @@ in { customConfig ? {}
 # Please run `nix/regenerate.sh` after modifying stack.yaml
 # or relevant part of cabal configuration files.
 # When switching to recent stackage or hackage package version,
-# you might also need to update the bcccoin-nix common lib. You
-# can do so by running the `nix/update-bcccoin-nix.sh` script.
+# you might also need to update the tbco-nix common lib. You
+# can do so by running the `nix/update-tbco-nix.sh` script.
 #
-# More information about bcccoin-nix and nix-tools is available at:
-# https://github.com/The-Blockchain-Company/bcccoin-nix/blob/master/docs/nix-toolification.org#for-a-stackage-project
+# More information about tbco-nix and nix-tools is available at:
+# https://github.com/The-Blockchain-Company/tbco-nix/blob/master/docs/nix-toolification.org#for-a-stackage-project
 #
 
 let
   system = if target != "x86_64-windows" then target else builtins.currentSystem;
   crossSystem = if target == "x86_64-windows" then lib.systems.examples.mingwW64 else null;
-  # commonLib provides bcccoin-nix tooling and extra libraries specific to bcc-sl.
+  # commonLib provides tbco-nix tooling and extra libraries specific to bcc-sl.
   commonLib = import ./lib.nix;
   pkgs = import commonLib.nixpkgs { inherit system crossSystem; };
   src = commonLib.cleanSourceHaskell ./.;

@@ -169,7 +169,7 @@ stack exec bcc-keygen -- --dump-dev-genesis-keys keys/{}.key
   npm run build:prod
   # use node REPL to import key
   node
-  > var api = require('../output/Bezalel.ClientApi')
+  > var api = require('../output/Klarity.ClientApi')
   undefined
   > var js = require('../src/tls_workaround.js')
   undefined

@@ -7,7 +7,7 @@ license-files:
   LICENSE
   NOTICE
 author:              TBCO
-maintainer:          TBCO <support@bcccoin.io>
+maintainer:          TBCO <support@blockchain-company.io>
 copyright:           2021 TBCO
 category:            Currency
 build-type:          Simple

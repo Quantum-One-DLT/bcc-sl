@@ -97,7 +97,7 @@ toNetworkMagic txt =
             Left err -> Left $ toText ("Please enter either 'mainnet', 'staging', or\
                                       \ an Int32 value: " ++ err)
 
--- As documented [here](https://bcccoin.myjetbrains.com/youtrack/issue/DEVOPS-844), these are
+-- As documented [here](https://tbco.myjetbrains.com/youtrack/issue/DEVOPS-844), these are
 -- the ProtocolMagic Int32 values of mainnet & staging.
 stagingProtocolMagic :: Int32
 stagingProtocolMagic = 633343913

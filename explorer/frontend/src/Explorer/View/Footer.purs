@@ -54,16 +54,16 @@ footerView state =
                 S.div ! S.className "logo__wrapper" $ do
                     S.div ! S.className "logo__container" $ do
                         S.a ! S.className "logo__bcc-name bg-logo-bcc-name"
-                            ! S.href "//bcccoin.io/projects/bcc/"
+                            ! S.href "//blockchain-company.io/projects/bcc/"
                             $ S.text ""
                     S.span  ! S.className "split"
                             $ S.text ""
                     S.a ! S.className "support"
-                        ! S.href "//bcccoin.io/projects/bcc/"
+                        ! S.href "//blockchain-company.io/projects/bcc/"
                         $ S.text (translate (I18nL.footer <<< I18nL.fooIohkSupportP) lang')
                     S.div ! S.className "logo__container"
-                          $ S.a ! S.className "logo__tbco-name bg-bcccoin-logo"
-                                ! S.href "//bcccoin.io/"
+                          $ S.a ! S.className "logo__tbco-name bg-tbco-logo"
+                                ! S.href "//blockchain-company.io/"
                                 $ S.text ""
             S.div ! S.className "explorer-footer__container explorer-footer__meta" $ do
                 S.span  ! S.className "version"
@@ -183,10 +183,10 @@ navItemsRight lang =
       , link: "https://klaritywallet.io"
       }
     , { label: translate (I18nL.footer <<< I18nL.fooTBCO) lang
-      , link: "https://bcccoin.io"
+      , link: "https://blockchain-company.io"
       }
     , { label: translate (I18nL.footer <<< I18nL.fooTBCOBlog) lang
-      , link: "https://bcccoin.io/blog/"
+      , link: "https://blockchain-company.io/blog/"
       }
     , { label: translate (I18nL.footer <<< I18nL.fooTBCOYoutube) lang
       , link: "https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w"

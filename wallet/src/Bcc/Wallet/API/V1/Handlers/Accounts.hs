@@ -107,8 +107,8 @@ getAccountAddresses layer wId accIdx pagination filters = do
     -- 3. Translate those to @V1@ types
     --
     -- This is what we do here, but we don't yet do it for the other handlers.
-    -- See <https://bcccoin.myjetbrains.com/youtrack/issue/CBR-356>
-    -- and <https://bcccoin.myjetbrains.com/youtrack/issue/CBR-389>.
+    -- See <https://tbco.myjetbrains.com/youtrack/issue/CBR-356>
+    -- and <https://tbco.myjetbrains.com/youtrack/issue/CBR-389>.
     res <- liftIO $ WalletLayer.getAccountAddresses layer wId accIdx pagination filters
     case res of
          Left e      -> throwM e

@@ -51,7 +51,7 @@ Run it from project root.
 `CORS` requests to connect `socket` server are currently restricted to following resources:
 * https://bccexplorer.com
 * https://explorer.blockchain-company.io
-* http://bcc-explorer.bcc-mainnet.bcccoin.io
+* http://bcc-explorer.bcc-mainnet.blockchain-company.io
 * http://localhost:3100
 
 Change `CORS` policies in `src/Pos/Explorer/Socket/App.hs` whenever you have to add more resources.

@@ -423,7 +423,7 @@ generateTlsCertificates ConfigurationOptions{..} executable tlsPath = do
 
         when (exitCode /= ExitSuccess) $ do
             logError "Couldn't generate TLS certificates for Wallet"
-            liftIO . fail $ "Couldn't generate TLS certificates; Bezalel wallet won't work without TLS. Please check your configuration and make sure you aren't already running an instance of Bezalel wallet."
+            liftIO . fail $ "Couldn't generate TLS certificates; Klarity wallet won't work without TLS. Please check your configuration and make sure you aren't already running an instance of Klarity wallet."
 
 
 -- | If we are on server, we want the following algorithm:

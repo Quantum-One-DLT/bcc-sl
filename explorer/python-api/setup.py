@@ -7,7 +7,7 @@ setuptools.setup(
     name="bcc-explorer-python-api",
     version="3.0.3",
     author="John Lotoski",
-    author_email="john.lotoski@bcccoin.io",
+    author_email="john.lotoski@blockchain-company.io",
     description="Explorer backend wrapper that dumps to PostgreSQL",
     long_description=long_description,
     long_description_content_type="text/markdown",

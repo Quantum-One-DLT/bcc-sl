@@ -11,7 +11,7 @@ let
     );
   };
 in
-runCommand "bcccoin-ops-shellcheck" { buildInputs = [ shellcheck ]; } ''
+runCommand "tbco-ops-shellcheck" { buildInputs = [ shellcheck ]; } ''
 EXIT_STATUS=0
 cd ${src'}
 while IFS= read -r -d ''' i

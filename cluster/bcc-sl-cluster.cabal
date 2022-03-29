@@ -4,7 +4,7 @@ synopsis:            Utilities to generate and run cluster of nodes
 description:         See README
 homepage:            https://github.com/The-Blockchain-Company/bcc-sl/cluster/README.md
 author:              TBCO Engineering Team
-maintainer:          operations@bcccoin.io
+maintainer:          operations@blockchain-company.io
 copyright:           2021 TBCO
 license:             Apache-2.0
 license-files:

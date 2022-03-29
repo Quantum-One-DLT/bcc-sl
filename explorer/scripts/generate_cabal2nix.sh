@@ -12,7 +12,7 @@ https://github.com/serokell/network-transport.git
 https://github.com/serokell/network-transport-tcp.git
 https://github.com/The-Blockchain-Company/bcc-crypto.git
 https://github.com/The-Blockchain-Company/bcc-report-server.git
-https://github.com/The-Blockchain-Company/gideon-prototype.git
+https://github.com/The-Blockchain-Company/zerepoch-prototype.git
 https://github.com/serokell/engine.io.git
 https://github.com/The-Blockchain-Company/bcc-sl.git
 "

@@ -690,7 +690,7 @@ bccFee TxFeePolicyUnknown{} _ _ =
 data RedeemBccError =
     -- | Unknown account
     --
-    -- NOTE: The Bezalel frontend requires users to create an account before
+    -- NOTE: The Klarity frontend requires users to create an account before
     -- they can redeem Bcc.
     RedeemBccUnknownAccountId UnknownHdAccount
 

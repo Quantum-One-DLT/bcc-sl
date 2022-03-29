@@ -26,11 +26,11 @@ import           Universum
 getDefaultLogDir :: IO FilePath
 getDefaultLogDir =
 #ifdef mingw32_HOST_OS
-    (</> "Bezalel\\Logs") <$> getEnv "APPDATA"
+    (</> "Klarity\\Logs") <$> getEnv "APPDATA"
 #elif defined (linux_HOST_OS)
-    (</> "Bezalel/Logs") <$> getEnv "XDG_DATA_HOME"
+    (</> "Klarity/Logs") <$> getEnv "XDG_DATA_HOME"
 #else
-    (</> "Library/Application Support/Bezalel/Logs") <$> getEnv "HOME"
+    (</> "Library/Application Support/Klarity/Logs") <$> getEnv "HOME"
 #endif
 
 -- | Write @contents@ into @filename@ under default logging directory.

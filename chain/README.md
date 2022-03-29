@@ -10,11 +10,11 @@ are, roughly from the lowest level to the highest level:
   have already been added to the blockchain while local ones have not yet been
   added.
 * A database interface that stores UTXOs and stakes.
-* A wrapper over [Gideon], the scripting language used in transactions.
+* A wrapper over [Zerepoch], the scripting language used in transactions.
 * The mempool which holds the UTXOs (unspent transaction outputs) for a node.
 
 
-* Script : A wrapper over [Gideon], the scripting language used in transactions.
+* Script : A wrapper over [Zerepoch], the scripting language used in transactions.
 * Security : Security features which allows specific network addresses to be ignored.
 * Txp : Transaction processing.
 * Lrc : The Leaders and Richmen Computation which is used in the Proof-of-Stake protocol.
@@ -23,5 +23,5 @@ are, roughly from the lowest level to the highest level:
 * Update : The means by which holders of Bcc vote on and accept updates to the protocol.
 * Block : Block processing.
 
-[Gideon]: https://github.com/The-Blockchain-Company/gideon-prototype
+[Zerepoch]: https://github.com/The-Blockchain-Company/zerepoch-prototype
 

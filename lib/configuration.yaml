@@ -15280,8 +15280,8 @@ devnet: &devnet
                               # set to desired value
             richmenShare: 0.96
             totalBalance: 13887504355000000
-            # We need to use HD addresses, because Bezalel can import
-            # only them and some developers may want to test Bezalel.
+            # We need to use HD addresses, because Klarity can import
+            # only them and some developers may want to test Klarity.
             useHDAddresses: True
           fakeAvvmBalance:
             count: 100

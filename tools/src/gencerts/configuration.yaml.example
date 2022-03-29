@@ -17,5 +17,5 @@ dev:
 
     clients:
       - organization: Input Output HK
-        commonName: Bezalel Wallet
+        commonName: Klarity Wallet
         expiryDays: 365
