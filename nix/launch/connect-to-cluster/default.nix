@@ -84,7 +84,7 @@ let
       "https://${walletListen}/$request_path" "$@"
   '';
   tlsConfigResultant = {
-    organization     = "Input Output HK";
+    organization     = "The Blockchain Company.io";
 
     caCommonName     = "Bcc SL Self-Signed Root CA";
     caEexpiryDays    = 3650;

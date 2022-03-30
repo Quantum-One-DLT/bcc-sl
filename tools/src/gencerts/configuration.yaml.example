@@ -1,12 +1,12 @@
 dev:
   tls:
     ca:
-      organization: Input Output HK
+      organization: The Blockchain Company.io
       commonName: Bcc SL Self-Signed Root CA
       expiryDays: 3650
 
     server:
-      organization: Input Output HK
+      organization: The Blockchain Company.io
       commonName: Bcc SL Server Node
       expiryDays: 365
       altDNS:
@@ -16,6 +16,6 @@ dev:
         - "::1"
 
     clients:
-      - organization: Input Output HK
+      - organization: The Blockchain Company.io
         commonName: Klarity Wallet
         expiryDays: 365

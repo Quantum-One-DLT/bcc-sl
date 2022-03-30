@@ -72,11 +72,11 @@ Certificate:
         Version: 3 (0x2)
         Serial Number: 2 (0x2)
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: O=Input Output HK, CN=Bcc SL Self-Signed Root CA
+        Issuer: O=The Blockchain Company.io, CN=Bcc SL Self-Signed Root CA
         Validity
             Not Before: Apr  3 12:23:36 2018 GMT
             Not After : Apr  3 12:23:36 2019 GMT
-        Subject: O=Input Output HK, CN=Bcc SL Server Node
+        Subject: O=The Blockchain Company.io, CN=Bcc SL Server Node
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)

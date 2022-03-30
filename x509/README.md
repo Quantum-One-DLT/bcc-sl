@@ -66,12 +66,12 @@ For example:
 dev: 
   tls: 
     ca:
-      organization: Input Output HK
+      organization: The Blockchain Company
       commonName: Bcc SL Self-Signed Root CA
       expiryDays: 3650
 
     server:
-      organization: Input Output HK
+      organization: The Blockchain Company
       commonName: Bcc SL Server Node
       expiryDays: 365
       altDNS:
@@ -81,7 +81,7 @@ dev:
         - "::1"
 
     clients:
-      - organization: Input Output HK
+      - organization: The Blockchain Company
         commonName: Klarity Wallet
         expiryDays: 365
 ```
